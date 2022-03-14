@@ -61,3 +61,28 @@ def solution(N, number):
     #         return i
     return -1
 print(solution(2, 11))
+
+
+
+
+# TODO: 이전 코드 
+def solution(N, number):
+    # s = [set()] * 9 # index 1~8까지 사용하기 위해
+    s = [set() for x in range(9)]
+    for i, x in enumerate(s):
+        if i == 0:
+            continue
+        x.add(int(str(N)*i))
+    for i in range(1, 9): # 1, 2, ... 8
+        for j in range(1, i): # i == 3이면, 1, 2, 3 | 1 - 2, 2 - 1
+             
+             for op1 in s[j]:
+                 for op2 in s[i-j]:
+                    s[i].add(op1 + op2)
+                    s[i].add(op1 - op2)
+                    s[i].add(op1 * op2)
+                    if op2 != 0:
+                        s[i].add(op1 // op2)
+        if number in s[i]:
+            return i
+    return -1

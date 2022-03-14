@@ -1,34 +1,35 @@
 # https://programmers.co.kr/learn/courses/30/lessons/17676
+from datetime import datetime, timedelta
+
 def solution(lines):
     answer = 0
     boundaries = []
-    # TODO: 경계값들(끝 시간, 시작 시간) 모두 저장해두기. -> 탐색 대상인 줄 알았는데 아닌 듯.
+
+    # 경계값들(끝 시간, 시작 시간) 모두 저장해두기. -> 탐색 대상?
     # 끝 시간 기준으로 정렬되어 있음
     for line in lines:
-        boundaries.append(line[0])
-        boundaries.append(line[0] - line[1]) #FIXME:
+        log = line.split()
+        endTime = log[1]
+
+        log[1]
+        startTime = datetime.strptime(log[1], "%H:%M:%S.%f") - timedelta(seconds=float(log[2][:-1])) #FIXME: 
+        boundaries.append([startTime.strftime("%H:%M:%S.%f"), endTime])
     
     boundaries.sort()
-    for boundary in boundaries:
+    for index, boundary in enumerate(boundaries):
         temp = 0
-        # TODO: 최대 개수 구하기
-        for boundary <= 끝시간 or 시작시간 <= boundary +1: #FIXME:
-            temp += 1
+        # 최대 개수 구하기
+        for b in boundaries[index:]:
+            plusOne = datetime.strptime(boundary[0], "%H:%M:%S.%f") + timedelta(seconds=1)
+            if b[0] <= plusOne.strftime("%H:%M:%S.%f") or boundary[0] <= b[1]:
+                temp += 1
+                continue
+            else:
+                break
 
         if temp > answer:
             answer = temp
 
     return answer
 
-print(solution([
-"2016-09-15 20:59:57.421 0.351s",
-"2016-09-15 20:59:58.233 1.181s",
-"2016-09-15 20:59:58.299 0.8s",
-"2016-09-15 20:59:58.688 1.041s",
-"2016-09-15 20:59:59.591 1.412s",
-"2016-09-15 21:00:00.464 1.466s",
-"2016-09-15 21:00:00.741 1.581s",
-"2016-09-15 21:00:00.748 2.31s",
-"2016-09-15 21:00:00.966 0.381s",
-"2016-09-15 21:00:02.066 2.62s"
-]))
+print(solution(	["2016-09-15 01:00:04.001 2.0s", "2016-09-15 01:00:07.000 2s"]))
