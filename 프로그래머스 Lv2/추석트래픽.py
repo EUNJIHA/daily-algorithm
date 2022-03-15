@@ -11,7 +11,6 @@ def solution(lines):
         log = line.split()
         endTime = log[1]
 
-        log[1]
         startTime = datetime.strptime(log[1], "%H:%M:%S.%f") - timedelta(seconds=float(log[2][:-1])) #FIXME: 
         boundaries.append([startTime.strftime("%H:%M:%S.%f"), endTime])
     
