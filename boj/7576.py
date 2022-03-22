@@ -54,7 +54,6 @@ def solution(m, n):
     dy = [-1, 0, 1, 0]
     # 익은 토마토 찾기
     ripedTomatos = []
-    
     rottenTomatosCount = 0
     for i in range(n):
         for j in range(m):
@@ -92,8 +91,10 @@ def solution(m, n):
         
         ripedTomatos = newRipedTomatos
 
-
 M, N = map(int, input().split())
 box = [list(map(int, input().split())) for _ in range(N)]
 
 print(solution(M, N))
+
+# ripedTomatosCount를 추가해서 전체 처리 개수 세도록 했고,
+# while 문 내에서 for 문 돌릴 때, 이미 센 것에 대해선 처리하지 않도록 처리함.
