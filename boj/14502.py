@@ -30,11 +30,9 @@ def bfs(laboratory, tuple, virus): # ((0, 1), (2, 1), (2, 3))
     return newVirusCount
 
 def solution():
-    n, m = map(int, input().split())
     global N, M
-    N = n
-    M = m
-
+    N, M = map(int, input().split())
+    
     laboratory = [list(map(int, input().split())) for _ in range(N)]
 
     blank = []
@@ -48,10 +46,16 @@ def solution():
             elif laboratory[i][j] == 2:
                 virus.append((i, j))
 
-    candidates = []
+    answer = 0
+    # candidates = []
     for c in list(combinations(blank, 3)):
-        candidates.append(blankCount -  bfs(deepcopy(laboratory), c, virus) - 3)
+        # result = blankCount -  bfs(deepcopy(laboratory), c, virus) - 3
+        result = blankCount -  bfs([row[:] for row in laboratory], c, virus) - 3
+        if answer < result:
+            answer = result
+        # candidates.append(blankCount -  bfs(deepcopy(laboratory), c, virus) - 3)
         
-    return max(candidates)
+    # return max(candidates)
+    return answer
 
 print(solution())
