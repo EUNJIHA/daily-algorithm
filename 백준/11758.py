@@ -1,6 +1,4 @@
-# int(input())
-# map(int, input().split())
-
+# https://whitesnake.uzoo.in/79
 def solution(p1, p2, p3):
     # 일직선 0: 기울기 같은지 확인
     # slope1 = p2[1] - p1[1] / p2[0] - p1[0]
