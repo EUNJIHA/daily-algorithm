@@ -99,7 +99,7 @@ def solution():
 print(solution())
 
 # 이게 진짜
-def getNum(n, m, data):
+def getNum(n, m, data): # n: 배열 길이, m: 원하는 숫자, data: 배열
     count = 0
     interval_sum = 0
     end = 0
