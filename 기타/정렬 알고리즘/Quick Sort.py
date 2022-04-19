@@ -21,7 +21,8 @@ def quick_sort(array, start, end):
     quick_sort(array, start, right - 1)
     quick_sort(array, right + 1, end)
 
-arr = [7, 6, 5, 8, 3, 2, 9, 4, 1]
+# arr = [7, 6, 5, 8, 3, 2, 9, 4, 1]
+arr = [1, 2, 3, 4, 5, 6, 7, 8]
 print(arr)
 quick_sort(arr, 0, len(arr) - 1)
 print(arr)
@@ -43,3 +44,9 @@ print(arr)
 #     return quick_sort(left_side) + [pivot] + quick_sort(right_side)
 
 # print(quick_sort(array))
+
+
+# 시간복잡도
+# 최선 O(nlogn)
+# 최악 O(n^2) -> 오름차순 정렬, 내림차순 정렬 되어 있을 때 피봇을 최솟값 또는 최댓값을 선택한 경우
+# 최악 개선하는 방법 -> 중간 값으로 설정.
