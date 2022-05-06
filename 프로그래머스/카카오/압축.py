@@ -33,24 +33,3 @@ def solution(msg):
 
 # print(solution("KAKAO"))
 print(solution("ABABABABABABABAB"))
-
-
-
-    # while cur != len(msg) - 1:
-    #     flag = True
-    #     for i in range(cur + 1, len(msg)):
-    #         if msg[cur:i+1] in dict.keys():
-    #             continue
-    #         else:
-    #             flag = False
-    #             # cur = i - 1
-    #             if i == cur+1:
-    #                 dict[msg[cur:i+1]] = lastNum + 1
-    #                 lastNum += 1
-    #             answer.append(dict[msg[cur:i]])
-
-    #             cur = i
-    #             break
-    #     if flag:
-    #         cur = len(msg) - 1
-    # answer.append(dict[msg[cur]])
