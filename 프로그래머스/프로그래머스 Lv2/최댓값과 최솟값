@@ -3,3 +3,7 @@ def solution(s):
     arr = [int(x) for x in s.split(" ")]
     answer = " ".join([str(min(arr)), str(max(arr))])
     return answer
+
+def solution(s):
+    s = list(map(int, s.split()))
+    return str(min(s)) + " " + str(max(s))
