@@ -1,0 +1,5 @@
+def solution(s):
+    answer = ''
+    arr = [int(x) for x in s.split(" ")]
+    answer = " ".join([str(min(arr)), str(max(arr))])
+    return answer
